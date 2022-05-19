@@ -11,23 +11,28 @@ import beers from './beers.json';
 
 export default function App() {
 
+  const [open, setOpen] = React.useState(false)
+  const [beerData, setBeerData] = React.useState([])
+  const [seed, setSeed] = React.useState("");
+
+  React.useEffect(() => {
+    setSeed(Math.floor(Math.random() * 5000));
+  }, []);
+
+
   const GetActionFormat = (cell, row) => {
     return (
-      <img height='35px' src='https://pngimg.com/uploads/beer/beer_PNG2330.png' />
+      <img height='35px' src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
     )
 
   }
 
   const GetInfoButton = (cell, row) => {
     return (
-      // <button className="button" >
-      //   <img height='35px' src='https://cdn-icons-png.flaticon.com/512/1810/1810852.png' />
-      // </button>
       <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong" onClick={() => openModal(row)}>
         <img height='35px' src='https://cdn-icons-png.flaticon.com/512/1810/1810852.png' />
       </button>
     )
-
   }
 
 
@@ -75,8 +80,7 @@ export default function App() {
     }
   ];
 
-  const [open, setOpen] = React.useState(false)
-  const [beerData, setBeerData] = React.useState([])
+
   const openModal = (row) => {
     setBeerData(row)
     setOpen(true)
@@ -93,7 +97,7 @@ export default function App() {
       <div>
         <section id="home" className="header">
           <div className="text--beer">
-            <h1><img height='85px' src="https://www.headforthehills.ca/wp-content/uploads/2017/05/beer-hand-right.png" />What You Know About <span className="safe">BEER</span> ?</h1>
+            <h1><img height='85px' src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />What You Know About <span className="safe">BEER</span> ?</h1>
 
           </div>
         </section>
@@ -108,10 +112,6 @@ export default function App() {
       />
       <Fragment>
         <div>
-          <button className="button" onClick={openModal}>
-            Controlled Popup
-          </button>
-          {console.log('descript', beerData)}
           <div className="modal-design">
             <Popup
               open={open}
@@ -122,19 +122,19 @@ export default function App() {
                 <button className="close" onClick={closeModal}>
                   &times;
                 </button>
-                <div className="modal-content p-4" style={{width:"430px"}}>
-                  <h5>let's tell you About<br/> {beerData?.name}</h5>
-                  <hr/>
+                <div className="modal-content p-4" style={{ width: "430px" }}>
+                  <h5>let's tell you About<br /> {beerData?.name}</h5>
+                  <hr />
                   <img height='225px' width='100%' className="modal-image" src="https://cdn.dribbble.com/users/1315892/screenshots/4677429/beer.gif" />
-                  About : 
+                  About :
                   <span className="modal-heading">{beerData?.descript}</span>
-                  <hr/>
-                  <div>{'Style ID'} : {beerData?.style_id}</div>  
-                  <div>{'ABV'} : {beerData?.abv} %</div>  
-                  <div>{'IBU'} : {beerData?.ibu}</div>  
-                  <div>{'UPC'} : {beerData?.upc}</div>  
-                  <div>{'SRM'} : {beerData?.srm}</div>  
-                  <hr/>
+                  <hr />
+                  <div>{'Style ID'} : {beerData?.style_id}</div>
+                  <div>{'ABV'} : {beerData?.abv} %</div>
+                  <div>{'IBU'} : {beerData?.ibu}</div>
+                  <div>{'UPC'} : {beerData?.upc}</div>
+                  <div>{'SRM'} : {beerData?.srm}</div>
+                  <hr />
                 </div>
               </div>
             </Popup>
