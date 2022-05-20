@@ -42,7 +42,6 @@ export default function App() {
       text: "Brewery ID",
       sort: true,
       headerStyle: {
-        width: "100px",
         backgroundColor: '#c8e6c9'
       }
     },
@@ -51,7 +50,6 @@ export default function App() {
       text: "Image",
       formatter: GetActionFormat,
       headerStyle: {
-        width: "120px",
         backgroundColor: '#c8e6c9'
       },
     },
@@ -71,7 +69,6 @@ export default function App() {
         backgroundColor: '#c8e6c9'
       }
     }, {
-      // dataField: "last_mod",
       text: "More Info",
       formatter: GetInfoButton,
       headerStyle: {
@@ -84,11 +81,9 @@ export default function App() {
   const openModal = (row) => {
     setBeerData(row)
     setOpen(true)
-    // this.setState({ open: true });
   }
   const closeModal = () => {
     setOpen(false)
-    // this.setState({ open: false });
   }
 
 
@@ -97,7 +92,7 @@ export default function App() {
       <div>
         <section id="home" className="header">
           <div className="text--beer">
-            <h1><img height='85px' src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />What You Know About <span className="safe">BEER</span> ?</h1>
+            <h1><img height='85px' src={`https://thumbs.gfycat.com/PlainVapidGalah-max-1mb.gif`} />What You Know About <span className="safe">BEER</span> ?</h1>
 
           </div>
         </section>
@@ -122,7 +117,7 @@ export default function App() {
                 <button className="close" onClick={closeModal}>
                   &times;
                 </button>
-                <div className="modal-content p-4" style={{ width: "430px" }}>
+                <div className="modal-content p-4">
                   <h5>let's tell you About<br /> {beerData?.name}</h5>
                   <hr />
                   <img height='225px' width='100%' className="modal-image" src="https://cdn.dribbble.com/users/1315892/screenshots/4677429/beer.gif" />
