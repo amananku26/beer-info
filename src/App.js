@@ -69,7 +69,6 @@ export default function App() {
         backgroundColor: '#c8e6c9'
       }
     }, {
-      // dataField: "last_mod",
       text: "More Info",
       formatter: GetInfoButton,
       headerStyle: {
@@ -82,11 +81,9 @@ export default function App() {
   const openModal = (row) => {
     setBeerData(row)
     setOpen(true)
-    // this.setState({ open: true });
   }
   const closeModal = () => {
     setOpen(false)
-    // this.setState({ open: false });
   }
 
 
@@ -95,7 +92,7 @@ export default function App() {
       <div>
         <section id="home" className="header">
           <div className="text--beer">
-            <h1><img height='85px' src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />What You Know About <span className="safe">BEER</span> ?</h1>
+            <h1><img height='85px' src={`https://thumbs.gfycat.com/PlainVapidGalah-max-1mb.gif`} />What You Know About <span className="safe">BEER</span> ?</h1>
 
           </div>
         </section>
