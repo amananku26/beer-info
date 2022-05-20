@@ -42,7 +42,6 @@ export default function App() {
       text: "Brewery ID",
       sort: true,
       headerStyle: {
-        width: "100px",
         backgroundColor: '#c8e6c9'
       }
     },
@@ -51,7 +50,6 @@ export default function App() {
       text: "Image",
       formatter: GetActionFormat,
       headerStyle: {
-        width: "120px",
         backgroundColor: '#c8e6c9'
       },
     },
@@ -122,7 +120,7 @@ export default function App() {
                 <button className="close" onClick={closeModal}>
                   &times;
                 </button>
-                <div className="modal-content p-4" style={{ width: "430px" }}>
+                <div className="modal-content p-4">
                   <h5>let's tell you About<br /> {beerData?.name}</h5>
                   <hr />
                   <img height='225px' width='100%' className="modal-image" src="https://cdn.dribbble.com/users/1315892/screenshots/4677429/beer.gif" />
