@@ -107,22 +107,22 @@ export default function App() {
       />
       <Fragment>
         <div>
-          <div className="modal-design">
+          <div className="">
             <Popup
               open={open}
               closeOnDocumentClick
               onClose={closeModal}
             >
-              <div className="modal-reset">
-                <button className="close" onClick={closeModal}>
+              <div className="check">
+                <button className="btn--close" onClick={closeModal}>
                   &times;
                 </button>
-                <div className="modal-content p-4">
+                <div className=" p-4 " style={{ width: '350px' }}>
                   <h5>let's tell you About<br /> {beerData?.name}</h5>
                   <hr />
-                  <img height='225px' width='100%' className="modal-image" src="https://cdn.dribbble.com/users/1315892/screenshots/4677429/beer.gif" />
+                  {/* <img className="" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_605,q_75,w_1903/v1/clients/fortworth-redesign/Unknown_6f2a9c4e-e0a7-4d60-a9b5-9cf14ba78bb9.jpg" /> */}
                   About :
-                  <span className="modal-heading">{beerData?.descript}</span>
+                  <span className="">{beerData?.descript}</span>
                   <hr />
                   <div>{'Style ID'} : {beerData?.style_id}</div>
                   <div>{'ABV'} : {beerData?.abv} %</div>
